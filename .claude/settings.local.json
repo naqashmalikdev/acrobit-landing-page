@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(Get-ChildItem -Path \"D:\\\\Waleed\\\\work\\\\landing-page\" -Recurse -Depth 3)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(ConvertTo-Json)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"AI agent services agency premium minimal\" --design-system -p \"WebSphereX AI Agent Page\" -f markdown)",
+      "Bash(find .agents/skills/ui-ux-pro-max -name \"search.py\")",
+      "Bash(find . -name \"search.py\" -path \"*/ui-ux*\")",
+      "mcp__magic__21st_magic_component_inspiration",
+      "Bash(powershell -Command \"\\(Get-Content 'app/services/ai-agents/page.tsx'\\) -replace 'ease: EASE as unknown as number\\\\[\\\\]', 'ease: EASE' | Set-Content 'app/services/ai-agents/page.tsx'\")",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/services/ai-agents)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/services/gen-ai-consulting)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/services/intelligent-automation)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/services/ai-agents)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Waleed\\\\work\\\\landing-page\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)"
+    ]
+  }
+}
