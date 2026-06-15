@@ -83,11 +83,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon/favicon.ico", sizes: "any" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon/apple-touch-icon.png", type: "image/png" },
     ],
     apple: [{ url: "/favicon/apple-touch-icon.png" }],
+    shortcut: "/favicon/apple-touch-icon.png",
   },
   formatDetection: {
     email: false,
