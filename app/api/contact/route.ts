@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServiceClient } from "@/lib/supabase";
 import { Resend } from "resend";
 
-const resend = new Resend("re_YXDTQDBu_7ZGRs8ALvPhKEB5mwzxBpfNb");
+const resend = new Resend("re_QjkzEtpA_FWFVEjPeaAFBj5FD1tJ6S4wB");
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -25,29 +24,10 @@ export async function POST(req: NextRequest) {
   const fullPhone = phone ? `${dialCode ?? ""}${phone}` : null;
   const fullName = [firstName, lastName].filter(Boolean).join(" ") || null;
 
-  /* ── Save to Supabase ── */
-  const supabase = getServiceClient();
-  const { error: dbError } = await supabase.from("contact_submissions").insert({
-    first_name: firstName || null,
-    last_name: lastName || null,
-    full_name: fullName,
-    email,
-    phone: fullPhone,
-    service: service || null,
-    budget: budget || null,
-    message,
-    source,
-  });
-
-  if (dbError) {
-    console.error("Supabase insert error:", dbError);
-    return NextResponse.json({ error: "Failed to save submission." }, { status: 500 });
-  }
-
   /* ── Notify admin ── */
   const { error: emailError } = await resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "tariqwebdev@gmail.com",
+    from: "info@acrobit.co",
+    to: "naqashmalikdev@gmail.com",
     subject: `New contact from ${fullName ?? email}${service ? ` — ${service}` : ""}`,
     html: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#0f1c3f;">
@@ -74,6 +54,7 @@ export async function POST(req: NextRequest) {
 
   if (emailError) {
     console.error("Resend error:", emailError);
+    return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 
   return NextResponse.json({ success: true });
