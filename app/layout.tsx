@@ -12,11 +12,7 @@ const organizationJsonLd = {
   logo: `${BASE_URL}/logo.png`,
   description:
     "Senior-only custom software & AI development agency. Fixed-price, outcome-guaranteed, HIPAA/GDPR compliant.",
-  sameAs: [
-    "https://twitter.com/acrobit",
-    "https://linkedin.com/company/acrobit",
-    "https://github.com/acrobit",
-  ],
+  sameAs: ["https://www.linkedin.com/company/acrobitdotco"],
 };
 
 const websiteJsonLd = {
@@ -75,8 +71,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@acrobit",
-    creator: "@acrobit",
     title: "Acrobit — Custom Software & AI Development Agency",
     description:
       "Senior-only software & AI agency. Fixed-price, outcome-guaranteed, HIPAA/GDPR compliant.",
